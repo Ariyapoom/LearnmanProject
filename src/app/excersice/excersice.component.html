@@ -1,0 +1,71 @@
+<div *ngIf="isfinish" class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="../../assets/Logo.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                        {{student.Student_Name}}
+                    </h5>
+                    <h6>
+                        {{student.Student_Email}}
+                    </h6>
+                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" id="home-tab" data-toggle="tab" (click)="gotohome()"
+                                role="tab">ข้อมูลส่วนตัว</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" (click)="gotolesson()"
+                                role="tab">แบบเรียน</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" (click)="gotoex()" role="tab">แบบฝึกหัด</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <input (click)="logout()" type="submit" class="profile-edit-btn" name="btnAddMore" value="Logout" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>แบบเรียน</p>
+                    <a *ngFor="let progess of student.Student_Progess.learning ; let i = index">บทที่ {{i+1}} {{progess?
+                        "ผ่าน" :"ยังไม่ผ่าน"}}<br></a>
+                    <p>แบบฝึกหัด</p>
+                    <a *ngFor="let problem of problems  ; let i = index">แบบฝึกหัดที่ {{problem}}
+                        {{this.student.Student_Progess.exercise[problem]? "ทำแล้ว" :"ยังไม่ได้ทำ"}}
+                        <a style="color: green;">{{this.student.Student_Score[problem]&&this.student.Student_Progess.exercise[problem]?"(ถูกต้อง)":""}}{{!this.student.Student_Score[problem]&&this.student.Student_Progess.exercise[problem]?"(กำลังตรวจ)":""}}</a><br></a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row" *ngFor="let problem of problemsdata;let i = index">
+                            <div class="col-md-5">
+                                <label>แบบฝึกหัดที่ {{problem.problem_id}}<br>
+                                    <p style="display:inline;">เรื่อง {{problem.title}} </p>
+                                    <p style="color: green;display:inline;">
+                                        {{this.student.Student_Progess.exercise[problem.problem_id]? "(ทำแล้ว)":""}}</p>
+                                    <p style="color: green;">{{this.student.Student_Score[problem.problem_id]&&this.student.Student_Progess.exercise[problem.problem_id]?"(ถูกต้อง)":""}}<a style="color: rgb(231, 199, 14);">{{!this.student.Student_Score[problem.problem_id]&&this.student.Student_Progess.exercise[problem.problem_id]?"(กำลังตรวจ)":""}}</a></p>
+                                </label>
+                                <hr>
+                            </div>
+                            <div class="col-md-7">
+                                <p (click)="gotoproblem(problem.problem_id)" style="cursor: pointer;">เริ่มทำ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

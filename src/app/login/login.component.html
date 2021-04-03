@@ -1,0 +1,73 @@
+<!-- <div class="headtit">Do It With Blockly</div>
+
+<div class="container">
+    <label for="email"><b>Email</b></label>
+    <input type="email" name="email" autocomplete="off" placeholder="E-mail" (keyup.enter)="login(username.value,password.value,username,password)" #username>
+
+    <label for="pass"><b>Password</b></label>
+    <input type="password" name="pass" placeholder="Password" (keyup.enter)="login(username.value,password.value,username,password)" #password>
+
+    <p *ngIf="errorMessage.length > 0" class="text-danger">
+        {{errorMessage}}</p>
+
+    <p *ngIf="error.message.length > 0" class="text-danger">
+        {{error.message}} </p>
+    <div class="center"><button class="login" (click)="login(username.value,password.value,username,password)">Login</button></div>
+    <div class="left">
+        <button (click)="routetoregis()">Register</button>
+    </div>        
+        
+</div> -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+                <h1 style="text-align: center;background-color: white ;border-radius: 5px;padding: 10px;">Do It With Blockly</h1>
+				<div class="panel panel-login">
+                    
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a (click)="routetoshow()" style="cursor: pointer;" class="active" id="login-form-link">Login</a>
+							</div>
+							<div class="col-xs-6">
+								<a (click)="routetoregis()" style="cursor: pointer;" id="register-form-link">Register</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-lg-12">
+                                <p *ngIf="errorMessage.length > 0" class="text-danger">
+                                    {{errorMessage}}</p>
+                            
+                                <p *ngIf="error.message.length > 0" class="text-danger">
+                                    {{error.message}} </p>
+								<form id="login-form" style="display: block;" autocomplete="off">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Email" value="" (keyup.enter)="login(username.value,password.value,username,password)" #username>
+									</div>
+									<div class="form-group">
+										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" (keyup.enter)="login(username.value,password.value,username,password)" #password>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In" (click)="login(username.value,password.value,username,password)">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

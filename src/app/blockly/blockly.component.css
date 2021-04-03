@@ -1,0 +1,70 @@
+ngx-blockly {
+  position: absolute;
+  width: 90%;
+  height: 500px;
+}
+.gnd{
+  background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+.description{
+  background-color: white ;
+  margin-top: 5%;
+  padding: 10px;
+  height: 200px;
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+.blockly{
+  margin-top: 2%;
+  
+}
+.col-md-6{
+  margin-top: 2%;
+}
+.col-md-3{
+  margin-top: 5.5%;
+  height: 80vh
+}
+.button{
+  text-align: end;
+  margin-right: 7%;
+  
+}
+button{
+  padding: 5px;
+  background-color: #7339ab;
+  margin-left: 1.25%;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+h2{
+ padding: 10px;
+ background-color: white;
+ border-radius: 20px;
+ text-align: center;
+ border: 1px solid;
+ padding: 10px;
+ box-shadow: 5px 10px #888888;
+}
+.backbut{
+  margin-right: 76%;
+}
+.truestatus{
+  text-align: end;
+  margin-left: 20px;
+  background-color: rgb(139, 211, 221);
+  padding: 5px;
+  border-radius: 20px;
+}
+h3{
+  padding: 20px;
+  background-color: rgb(15, 20, 94);
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+ }

@@ -1,0 +1,76 @@
+<!-- <div class="headtit">Do It With Blockly</div>
+<div class="row">
+
+    <div class="column" id="selectdiv">
+        <ul *ngFor="let learning of learnings.learning">
+            <li (click)="choose(learning)">
+                {{learning.id}} {{learning.title}}
+            </li>  
+        </ul>
+            
+    </div>
+
+    <div *ngIf="!hidedescription" class="column" id="description">
+        <h2>บทเรียนที่ {{this.learnings.learning[current].id}} <br>
+            {{this.learnings.learning[current].title}}</h2>
+        <div class="description">
+        </div>
+    </div>
+
+    <div class="column" id="workspace">
+        <div class="button">
+    <button (click)="home()">Home</button>
+    <button (click)="hide()">Hide</button>
+    <button (click)="runcode()">Run</button>
+    </div>
+        <div class="blockly">
+            <ngx-blockly [config]="config" [generatorConfig]="generatorConfig" (javascriptCode)="onCodejs($event)">
+            </ngx-blockly>
+        </div>
+    </div>
+</div> -->
+
+<div class="gnd">
+    <h3>แบบเรียนบทที่ {{this.learnings.lessonID}}</h3>
+        <div class="row">
+        <div class="col-md-2">
+            <div class="select">
+                <ul class="list-group" *ngFor="let learning of learnings.learning">
+                    <li class="list-group-item" (click)="choose(learning)">
+                        {{learning.id}} {{learning.title}}
+                    </li>  
+                </ul>
+            </div>           
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-2">
+                    <button (click)="back()">Back</button>
+                </div>
+                <div class="col-md-10">
+                    <div class="button">
+                        <button (click)="runcode()">Run</button>
+                        <button *ngIf="exercise == true" (click)="check()">Mark as Done</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="blockly">
+                <ngx-blockly [config]="config" [generatorConfig]="generatorConfig" (xmlCode)="onCodexml($event)"
+                    (javascriptCode)="onCodejs($event)"></ngx-blockly>
+            </div>
+        </div>
+        <div class="col-md-3">
+            
+             <h2>บทเรียนที่ {{this.learnings.learning[current].id}} <br>
+                        {{this.learnings.learning[current].title}}</h2>
+            <div class="description">
+                {{this.learnings.learning[current].description}}
+            </div>
+        </div>
+        <div class="col-md-1">
+            
+        </div>
+    </div>
+</div>

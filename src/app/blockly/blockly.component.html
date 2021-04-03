@@ -1,0 +1,41 @@
+<div class="gnd">
+    <h3>ทำแบบฝึกหัด</h3>
+        <div class="row">
+        <div class="col-md-2" style="text-align: end;">
+            
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-2">
+                    <button (click)="back()">Back</button>
+                </div>
+                <div class="col-md-10">
+                    <div class="button">
+                        <button (click)="runcode()">Run</button>
+                        <button (click)="sendtest()">Test</button>
+                        <button *ngIf="this.istest" (click)="commit()">Commit</button>
+                        <a *ngIf="send" class="truestatus">{{this.sendteststatus}}</a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="blockly">
+                <ngx-blockly [config]="config" [generatorConfig]="generatorConfig" (xmlCode)="onCodexml($event)"
+                    (javascriptCode)="onCodejs($event)"></ngx-blockly>
+            </div>
+        </div>
+        <div class="col-md-3">
+            
+            <h2>โจทย์ปัญหา</h2>
+            <div class="description">
+                <h4>เรื่อง {{problem.title}} </h4>
+                <p >{{problem.description}}</p>
+                
+            </div>
+        </div>
+        <div class="col-md-1">
+            
+        </div>
+    </div>
+</div>
